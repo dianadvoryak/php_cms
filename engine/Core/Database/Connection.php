@@ -57,7 +57,8 @@ class Connection
 
     $result = $exe->fetchAll(PDO::FETCH_ASSOC);
 
-    if($result === false){
+    if($result === false)
+    {
       return [];
     }
 
