@@ -16,6 +16,9 @@ class Theme
    */
   public $url = '';
 
+  /**
+   * @var array
+   */
   protected $data = [];
 
   /** 
