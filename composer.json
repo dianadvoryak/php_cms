@@ -1,0 +1,16 @@
+{
+    "name": "dianadvoryak/cms",
+    "authors": [
+        {
+            "name": "Diana Dvoryak",
+            "email": "dianadvoryak.w@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Engine\\": "engine",
+            "Engine\\DI\\": "engine/DI"
+        }
+    }
+}
