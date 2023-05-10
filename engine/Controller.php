@@ -2,9 +2,15 @@
 
 namespace Engine;
 
+use Engine\DI\DI;
+
 abstract class Controller
 {
-    public function __construct($di)
+    protected $di;
+
+    protected $db;
+    public function __construct(DI $di)
     {
+        $this->di = $di;
     }
 }
