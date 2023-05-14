@@ -4,6 +4,7 @@ namespace Engine\Core\Database;
 
 use \PDO;
 use \PDOException;
+use Engine\Core\Config\Config;
 
 class Connection
 {
@@ -19,13 +20,7 @@ class Connection
 
     public function connect()
     {
-        $config = [
-            'host' => '127.0.0.1',
-            'db_name' => 'cms',
-            'username' => 'root',
-            'password' => '12345678',
-            'charset' => 'utf8',
-        ];
+        $config = Config::file('database');
 
         $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['db_name'] . ';charset=' . $config['charset'];
 
@@ -34,18 +29,20 @@ class Connection
         return $this;
     }
 
-    public function execute($sql)
+    public function execute($sql, $values = [])
     {
         $sth = $this->link->prepare($sql);
 
-        return $sth->execute();
+        return $sth->execute($values);
     }
 
-    public function query($sql)
+    public function query($sql, $values = [])
     {
-        $exe = $this->execute($sql);
+        $sth = $this->link->prepare($sql);
 
-        $result = $exe->fetchAll(PDO::FETCH_ASSOC);
+        $sth->execute($values);
+
+        $result = $sth->fetchAll(PDO::FETCH_ASSOC);
 
         if($result === false)
         {
