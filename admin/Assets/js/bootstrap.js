@@ -2215,7 +2215,7 @@ var ScrollSpy = function ($) {
   var Selector = {
     DATA_SPY: '[data-spy="scroll"]',
     ACTIVE: '.active',
-    LIST_ITEM: '.list-item',
+    LIST_ITEM: '.list.php-item',
     LI: 'li',
     LI_DROPDOWN: 'li.dropdown',
     NAV_LINKS: '.nav-link',

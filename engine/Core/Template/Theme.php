@@ -63,6 +63,10 @@ class Theme
     {
         $templateFile = ROOT_DIR . '/content/themes/default/' . $nameFile . '.php';
 
+        if(ENV == 'Admin'){
+            $templateFile = ROOT_DIR . '/View/' . $nameFile . '.php';
+        }
+
         if(is_file($templateFile)){
             extract($data);
             require_once $templateFile;

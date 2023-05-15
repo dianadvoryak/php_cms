@@ -6,11 +6,11 @@ class DashboardController extends AdminController
 {
     public function index()
     {
-        $userModel = $this->load->model('User');
+        $userModel = $this->load->model('Page');
 
-        $userModel->repository->test();
+//        $userModel->repository->test();
 
-        print_r($userModel->repository->getUsers());
+//        print_r($userModel->repository->getUsers());
 
         $this->view->render('dashboard');
     }

@@ -18,7 +18,7 @@ class UserRepository extends Model
 
     public function test()
     {
-//        $user = new User(2);
+//        $user = new Page(2);
 //        $user->setEmail('user@user.com');
 //        $user->setPassword(md5(rand(1, 10)));
 //        $user->setRole('user');
