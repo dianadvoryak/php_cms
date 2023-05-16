@@ -12,7 +12,7 @@ class Theme
 
     public $url = '';
 
-    protected $data;
+    protected $data = [];
 
     public function header($name = null)
     {
@@ -68,7 +68,7 @@ class Theme
         }
 
         if(is_file($templateFile)){
-            extract($data);
+            extract(array_merge($data, $this->data));
             require_once $templateFile;
         } else {
             throw new \Exception(sprintf('View file %s does not exist!', $templateFile));

@@ -2,19 +2,33 @@
 
     <main>
         <div class="container">
-            <h3>Create page</h3>
-
-            <form>
-                <div class="form-group">
-                    <label for="fromTitle">Title</label>
-                    <input type="text" class="form-control" id="fromTitle" placeholder="Title page...">
+            <div class="row">
+                <div class="col page-title">
+                    <h3>Create page</h3>
                 </div>
-                <div class="form-group">
-                    <label for="fromContent">Content</label>
-                    <textarea class="form-control" id="fromContent"></textarea>
+            </div>
+            <div class="row">
+                <div class="col-9">
+                    <form id="formPage">
+                        <div class="form-group">
+                            <label for="formTitle">Title</label>
+                            <input type="text" name="title" class="form-control" id="formTitle" placeholder="Title page...">
+                        </div>
+                        <div class="form-group">
+                            <label for="formContent">Content</label>
+                            <textarea name="content" id="redactor" class="form-control" id="formContent"></textarea>
+                        </div>
+                    </form>
                 </div>
-                <button type="submit" class="btn btn-primary mb-2">Publish</button>
-            </form>
+                <div class="col-3">
+                    <div>
+                        <p>Publish this page</p>
+                        <button type="submit" class="btn btn-primary" onclick="page.add()">
+                            Publish
+                        </button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
 
